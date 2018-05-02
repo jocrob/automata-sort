@@ -12,4 +12,20 @@ From command line:
 As of now there are three automata to choose from Rule 90, Rule 184, and Conway's Game of Life. The arguments are...
 > rule90, rule184, life
 
-<h4> Examples </h2>
+<h3> Examples </h3>
+
+<p>Original Image</p>
+<img src = "https://github.com/jocrob/automata-sort/blob/master/examples/flowers.jpg"> 
+
+<p>Rule 90 - 15 iterations</p>
+<img src = "https://github.com/jocrob/automata-sort/blob/master/examples/rule90%20-%2015%20iterations.png">
+
+<p>Rule 184 - 30 iterations</p>
+<img src = "https://github.com/jocrob/automata-sort/blob/master/examples/rule%20184%20-%2030%20iterations.png">
+
+<p>Game of Life - 30 iterations</p>
+<img src = "https://github.com/jocrob/automata-sort/blob/master/examples/GOL%20-%2030%20iterations.png">
+
+<hr>
+
+<p>Based on <a href = "https://github.com/satyarth/pixelsort"> satyarth's Pixel Sort </a></p>
