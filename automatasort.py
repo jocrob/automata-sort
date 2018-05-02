@@ -107,7 +107,7 @@ def rule90(pixels, values):
 				nextp = x + 1
 			elif(x == len(pixels[row]) - 1):
 				prevp = x - 1
-				nextp = 0								#wraps around to beginning cell if cell is at right edge
+				nextp = 0					#wraps around to beginning cell if cell is at right edge
 			else:
 				prevp = x - 1
 				nextp = x + 1
@@ -115,7 +115,7 @@ def rule90(pixels, values):
 			oldVal = values[row][x]
 			newVal = values[row][prevp] ^ values[row][nextp]		#performs rule90 function for new cell value
 		
-			if(oldVal == newVal):									#cases: 000, 101, 110, 011
+			if(oldVal == newVal):								#cases: 000, 101, 110, 011
 				sorted[row].append(pixels[row][x])
 			elif(newVal == 0):
 				if(values[row][prevp] == 0):						#case: 010 
@@ -123,15 +123,15 @@ def rule90(pixels, values):
 						sorted[row].append(pixels[row][prevp])
 					else:
 						sorted[row].append(pixels[row][nextp])
-				else:												#case: 111
+				else:									#case: 111
 						if(locZeroRow < len(pixels)):									#first searches for a nearby 0 pixel to insert 
 							sorted[row].append(pixels[locZeroRow][locZeroCol])
 						else:															#if none are found
-							sorted[row].append(pixels[zeroRow][zeroCol])				#inserts a generic zero valued pixel from the image
+							sorted[row].append(pixels[zeroRow][zeroCol])			#inserts a generic zero valued pixel from the image
 			elif(newVal == 1):
 				if(values[row][prevp] == 1):						#case 100
 					sorted[row].append(pixels[row][prevp])
-				else:												#case 001
+				else:									#case 001
 					sorted[row].append(pixels[row][nextp])
 
 	return sorted;
@@ -162,7 +162,7 @@ def rule184(pixels, values):
 				sorted[row].append(pixels[row][nextp])
 			elif(prevVal == 1 & currVal == 0):				#cases 101 100 (previous 1 pixel fills space of current 0 pixel)
 				sorted[row].append(pixels[row][prevp])
-			else:											#cases 000 001 011 111 no 1 pixel can fill the space of a 0 pixel so the pixels stay the same
+			else:								#cases 000 001 011 111 no 1 pixel can fill the space of a 0 pixel so the pixels stay the same
 				sorted[row].append(pixels[row][x])
 
 	return sorted
@@ -199,9 +199,9 @@ def life(pixels, values):
 					sorted[row].append(pixels[zeroRow][zeroCol])
 			elif((neighbors == 2 or neighbors == 3) and values[row][col] == 1):		#case living
 				sorted[row].append(pixels[row][col])
-			elif(neighbors == 3):													#case born	
+			elif(neighbors == 3):								#case born	
 				sorted[row].append(pixels[one[0]][one[1]]) 
-			else:																	#case dead
+			else:										#case dead
 				sorted[row].append(pixels[row][col])
 
 	return sorted
